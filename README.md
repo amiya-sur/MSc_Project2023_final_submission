@@ -1,5 +1,5 @@
 # MSc_Project2023_final_submission
-# Groundwater Level Prediction in Carroll County, West Tennessee
+# Advanced Groundwater Level Forecasting in Memphis Aquifer - A Comparative Study of Time Series and Multivariate Analyses
 
 This repository contains a data science project to develop robust predictive models for groundwater levels (GWL) in Carroll County, West Tennessee.
 
