@@ -1,66 +1,54 @@
-# MSc_Project2023_final_submission
-# Advanced Groundwater Level Forecasting in Memphis Aquifer - A Comparative Study of Time Series and Multivariate Analyses
+Advanced Groundwater Level Forecasting in Memphis Aquifer
+Overview
+With the pressing global challenges surrounding water scarcity, this repository showcases an in-depth scientific investigation focusing on groundwater level (GWL) forecasting in Carroll County, West Tennessee. As a part of this research, we leverage state-of-the-art time series and machine learning techniques, including ARIMA, LSTM, and a novel hybrid ARIMA-LSTM model, to accurately predict groundwater levels, drawing insights from environmental and meteorological variables.
 
-This repository contains a data science project to develop robust predictive models for groundwater levels (GWL) in Carroll County, West Tennessee.
+Table of Contents
+Data Description
+Research Methodology
+Model Architectures
+Key Findings
+Contributions and Impacts
+Future Directions
+Usage and Notebooks
+Acknowledgments
+Data Description
+The dataset offers a rich tapestry of variables that encompass:
 
-## Data
+Observation Wells Data: A foundational dataset from TDA-1, an observation well that reliably measures "Water Column" and "Water Temperature."
+Soil Moisture Arrays: These sensors capture attributes like "degree_C Soil Temperature," “m3/m3 Water Content,” and “mS/cm Saturation Extract EC”.
+Weather Station ATMOS Data: Provides year-round metrics like "mm/h Max Precip Rate," "degree_C Air Temperature," and "W/m2 Solar Radiation."
+Detailed data sources and their geographical representations can be found in the provided notebooks.
 
-The project utilizes a real-world dataset that comprises time series measurements collected from various sources, including an observation well, soil moisture sensors, and a weather station. These data points serve as the foundation for the research and inform the predictive modeling efforts.
+Research Methodology
+The research journey is segmented into:
 
-### Variables Studied:
+Data Exploration and Pre-processing: Ensures data consistency, handles missing values, and detects abnormalities.
+Feature Engineering: Sensitivity analysis is employed to prioritize impactful variables.
+Model Development: Traditional ARIMA, Univariate LSTM, Multivariate LSTM, and our proposed hybrid ARIMA-LSTM model are meticulously crafted and evaluated.
+Model Architectures
+ARIMA: A linear statistical model was used as a benchmark, with the model specifics outlined in the notebooks.
+Univariate LSTM: Explores the time-dependent nature of groundwater levels without incorporating external variables.
+Multivariate LSTM: Incorporates meteorological data to enhance predictions.
+Hybrid ARIMA+LSTM: Our innovative model captures both linear trends (via ARIMA) and non-linear patterns (via LSTM) by integrating ARIMA residuals as input features for the LSTM.
+Key Findings
+The hybrid ARIMA-LSTM model emerged as the most accurate, demonstrating the merit of combining linear and non-linear forecasting techniques.
+Meteorological variables significantly influenced groundwater dynamics, revealing intricate correlations between environmental factors.
+Notable trends, such as rising soil temperatures coinciding with increasing water levels, were observed, hinting at broader environmental impacts, possibly linked to climate change.
+Contributions and Impacts
+This study bridges the gap between hydrological modeling and machine learning, offering a scientifically robust framework that can assist policymakers and stakeholders in adaptive water resource management. Moreover, it aligns with initiatives like CAESER, enriching our understanding of West Tennessee's hydrological landscape.
 
-#### Key Variables:
+Future Directions
+While the research achieves significant milestones, areas for future exploration include:
 
-- **GWL (Groundwater Level)**: Measures water level in the well to track changes over time.
-    
-- **Soil Moisture**: Measures volumetric water content (m³/m³), essential for understanding the hydrological cycle in the region.
-  
-- **Air Temperature**: Ambient air temperature data are also included to explore its influence on soil moisture and, consequently, groundwater levels.
+Investigating optimal weight and bias initialization in neural networks.
+Exploring alternative LSTM architectures and regularization techniques.
+Expanding the dataset to include more regions and variables, enhancing model generalizability.
+Usage and Notebooks
+The project is structured as a series of Jupyter Notebooks:
 
-#### Additional Variables:
-
-- **Water Temperature**: Measures the temperature of the water in the well, may indicate potential changes in water level with certain fluctuations in it.
-  
-- **Soil Temperature**: Measures soil temperature in degrees Celsius. May affect evaporation and consequently groundwater levels.
-  
-- **Saturation Extract EC**: Measures soil saturation extract electrical conductivity (mS/cm). May indicate mineral content affecting water flow into the aquifer.
-  
-- **Atmospheric Pressure**: Atmospheric pressure recorded by the datalogger (kPa). Similar to soil temperature, it may affect the rate of evaporation, thereby influencing water levels.
-  
-- **Max Precip Rate**: Measures maximum precipitation rate (mm/h), might have a direct relation with the rate of groundwater recharge from rainfall.
-  
-- **Solar Radiation**: Measures solar radiation intensity (W/m²), influencing evaporation and transpiration rates, affecting groundwater levels.
-
-### Data Files:
-
-Three CSV files are provided, containing the raw data for the aforementioned variables. These files include comprehensive meteorological and hydrological data essential for this study.
-
-## Notebooks
-
-The analysis is structured as a series of Jupyter Notebooks:
-
-1. **Data Exploration and ARIMA Modelling**: Loads, preprocesses, and explores the dataset. Fits an ARIMA time series model as a baseline.
-   
-2. **Univariate LSTM**: Develops a univariate LSTM model using past GWL data only. Applies regularization via dropout.
-  
-3. **Multivariate LSTM**: Builds a multivariate LSTM incorporating key factors like precipitation and soil moisture identified via sensitivity analysis.
-  
-4. **Hybrid Model**: Proposes a novel hybrid ARIMA-LSTM model combining the strengths of both linear and nonlinear techniques.
-
-## Key Results
-
-- The hybrid ARIMA-LSTM model achieved the lowest RMSE and highest Nash-Sutcliffe Efficiency score on the test set.
-  
-- Incorporating meteorological factors improved multivariate LSTM performance over the univariate version.
-  
-- Overall, the data-driven models significantly outperformed the statistical ARIMA baseline.
-
-## Contributions
-
-This work makes a timely contribution at the intersection of hydrological modeling and machine learning. The code and notebooks provided enable reproducible research.
-
----
-
-Please refer to the individual notebooks for model details and in-depth analysis. Feel free to reuse or adapt the code for your own projects.
-
-
+Data Exploration and ARIMA Modelling.ipynb: Introduction, data loading, preprocessing, and ARIMA model development.
+Univariate LSTM.ipynb: Development of the Univariate LSTM model.
+Multivariate LSTM.ipynb: Incorporation of meteorological factors to refine predictions.
+Hybrid Model.ipynb: Development and insights from the proposed hybrid ARIMA-LSTM model.
+Acknowledgments
+We express our gratitude to Mr. Farhad from the University of Memphis and the CAESER initiative for their invaluable support and insights.
